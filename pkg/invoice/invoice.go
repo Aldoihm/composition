@@ -1,10 +1,14 @@
 package invoice
 
-import "github.com/Aldoihm/composition/pkg/customer"
+import (
+	"github.com/Aldoihm/composition/pkg/customer"
+	"github.com/Aldoihm/composition/pkg/invoiceitem"
+)
 
 type Invoice struct {
 	country string
 	city    string
 	total   float64
 	client  customer.Customer
+	intem   []invoiceitem.Item
 }
