@@ -14,7 +14,23 @@ func New(id uint, product string, value float64) Item {
 	return Item{id, product, value}
 }
 
-// Getter of value
-func (i Item) Value() float64 {
-	return i.value
+// Declaración de tipo en base a un slice de estructura
+type Items []Item
+
+// Funcion constructora del nuevo tipo
+func NewItems(items ...Item) Items {
+	var is Items
+	for _, item := range items {
+		is = append(is, item)
+	}
+	return is
+}
+
+// Metodos del nuevo tipo
+func (i Items) Total() float64 {
+	var total float64
+	for _, item := range i {
+		total += item.value
+	}
+	return total
 }

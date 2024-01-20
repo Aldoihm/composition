@@ -13,12 +13,12 @@ func main() {
 		"Mexico",
 		"Teziutlan",
 		customer.New("Lupita", "Ixtlahuaca", "2311144378"),
-		[]invoiceitem.Item{
-			invoiceitem.New(1, "leche", 20),
-			invoiceitem.New(2, "jamon", 25),
-			invoiceitem.New(3, "queso", 15),
-		},
+		invoiceitem.NewItems(
+			invoiceitem.New(1, "leche", 20.5),
+			invoiceitem.New(2, "jamon", 25.8),
+			invoiceitem.New(3, "queso", 15.2),
+		),
 	)
 	i.SetTotal()
-	fmt.Printf("%+v", i)
+	fmt.Printf("%+v\n", i)
 }
